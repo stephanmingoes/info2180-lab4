@@ -16,9 +16,9 @@ function getSpecificHero(hero) {
 }
 
 function searchHeroes(search) {
-  if (search === null || sanitizeInput(search) === "")
-    return getAllSuperHeroes();
-  return getSpecificHero(search);
+  let newSearch = sanitizeInput(search);
+  if (search === null || newSearch === "") return getAllSuperHeroes();
+  return getSpecificHero(newSearch);
 }
 
 document.getElementById("search-all").addEventListener("click", () => {
